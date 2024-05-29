@@ -26,7 +26,7 @@ describe('applitool login test', () => {
 });
 
 // using 'select' to choose an option from a dropdown
-cy.get('select').select('option value');
+// cy.get('select').select('option value');
 
-//using 'invoke' to interact with a dropdown option
-cy.get('select').invoke('val', 'option value');
+// //using 'invoke' to interact with a dropdown option
+// cy.get('select').invoke('val', 'option value');

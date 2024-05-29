@@ -1,7 +1,8 @@
 describe('Handling Alerts', () => {
-    cy.visit('https://demoqa.com/alerts');
+    
 
     it('navigates basic alert', () => {
+        cy.visit('https://demoqa.com/alerts');
         cy.get('#alertButton').then(($btn) => {
             if ($btn.hasClass('btn-primary')) {
                 $btn.click();
@@ -15,6 +16,7 @@ describe('Handling Alerts', () => {
     });
 
     it('navigates through timer alert', () => {
+        cy.visit('https://demoqa.com/alerts');
         cy.get('#timerAlertButton').then(($btn) => {
             if ($btn.hasClass('btn-primary')) {
                 $btn.click();
@@ -28,6 +30,7 @@ describe('Handling Alerts', () => {
     });
 
     it('navigates confirm alert and clicks ok', () => {
+        cy.visit('https://demoqa.com/alerts');
         cy.get('#confirmButton').then(($btn) => {
             if ($btn.hasClass('btn-primary')) {
                 $btn.click();
@@ -41,6 +44,7 @@ describe('Handling Alerts', () => {
     });
 
     it('navigates confirm alert cancel', () => {
+        cy.visit('https://demoqa.com/alerts');
         cy.get('#confirmButton').then(($btn) => {
             if ($btn.hasClass('btn-primary')) {
                 $btn.click();
@@ -54,6 +58,7 @@ describe('Handling Alerts', () => {
     });
 
     it('handles prompt alert', () => {
+        cy.visit('https://demoqa.com/alerts');
         cy.window().then((win) => {
             cy.stub(win, 'prompt').returns('Testing the prompt alert function');
             cy.get('#promtButton').click(); 
