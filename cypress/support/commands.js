@@ -24,15 +24,15 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-cypress.commands.add('setLocalStorage', (key, value) => {
+Cypress.Commands.add('setLocalStorage', (key, value) => {
     cy.window().then((window) => {
-        window.localStorage.setItem(key, value)
+        window.localStorage.setItem(key, value);
     })
 })
 
-cypress.commands.add('getLocalStorage', (key) => {
+Cypress.Commands.add('getLocalStorage', (key) => {
     cy.window().then((window) => {
-        window.localStorage.getItem(key)
+        return window.localStorage.getItem(key);
     })
 })
 
@@ -40,11 +40,11 @@ cypress.commands.add('getLocalStorage', (key) => {
 // custom command for clicking link using label
 // clickLink is the name of the command
 
-Cypress.Command.add('clickLink', (label) => {
+Cypress.Commands.add('clickLink', (label) => {
     cy.get('a').contains(label).click();
 })
 
-Cypress.Commands.add('ClickMe', (buttonId) => {
+Cypress.Commands.add('clickMe', (buttonId) => {
     cy.get(buttonId).then(($btn) => {
         if ($btn.hasClass('btn-primary')) {
             $btn.click();
